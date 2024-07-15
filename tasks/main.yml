@@ -1,0 +1,9 @@
+---
+- name: 'Prepare for installing CNI plugins'
+  ansible.builtin.import_tasks: 'pre-install.yml'
+
+- name: 'Install CNI plugins'
+  ansible.builtin.import_tasks: 'install.yml'
+
+- name: 'Configure CNI plugins'
+  ansible.builtin.import_tasks: 'configure.yml'

@@ -1,0 +1,14 @@
+---
+- name: 'Create CNI plugins directories'
+  ansible.builtin.file:
+    path: '{{ cni_plugins_path }}'
+    owner: 'root'
+    group: 'root'
+    state: 'directory'
+    mode: 0755
+  become: true
+  loop:
+    - '{{ cni_plugins_install_path }}'
+    - '{{ cni_plugins_config_path }}'
+  loop_control:
+    loop_var: cni_plugins_path

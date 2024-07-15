@@ -1,0 +1,13 @@
+---
+# See available releases: https://github.com/containernetworking/plugins/releases
+cni_plugins_version: '1.5.1'
+cni_plugins_archive_name: 'cni-plugins-linux-amd64-v{{ cni_plugins_version }}.tgz'
+cni_plugins_download_url: 'https://github.com/containernetworking/plugins/releases/download/v{{ cni_plugins_version }}/{{ cni_plugins_archive_name }}'
+cni_plugins_download_path: '/tmp'
+
+# The CNI plugins directories
+cni_plugins_install_path: '/opt/cni/bin'
+cni_plugins_config_path: '/etc/cni/net.d'
+
+# Configure CNI plugins
+cni_plugins_config_files: []

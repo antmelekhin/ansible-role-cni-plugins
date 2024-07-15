@@ -1,0 +1,13 @@
+---
+- name: 'Configure CNI plugins'
+  ansible.builtin.copy:
+    content: '{{ cni_plugins_config.content | to_nice_json }}'
+    dest: '{{ cni_plugins_config_path }}/{{ cni_plugins_config.filename }}'
+    owner: 'root'
+    group: 'root'
+    mode: 0644
+  when: cni_plugins_config_files | length
+  become: true
+  loop: '{{ cni_plugins_config_files }}'
+  loop_control:
+    loop_var: cni_plugins_config

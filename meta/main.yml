@@ -1,0 +1,36 @@
+---
+galaxy_info:
+  author: 'antmelekhin'
+  role_name: 'cni_plugins'
+  description: 'An Ansible role to install and configure CNI (Container Network Interface) plugins.'
+
+  license: 'MIT'
+
+  min_ansible_version: '2.12'
+
+  platforms:
+    - name: 'Debian'
+      versions:
+        - 'buster'
+        - 'bullseye'
+        - 'bookworm'
+    - name: 'EL'
+      versions:
+        - '7'
+        - '8'
+        - '9'
+    - name: 'Ubuntu'
+      versions:
+        - 'bionic'
+        - 'focal'
+        - 'jammy'
+
+  galaxy_tags:
+    - 'cni'
+    - 'containers'
+    - 'docker'
+    - 'kubernetes'
+    - 'k8s'
+    - 'networking'
+
+dependencies: []
