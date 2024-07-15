@@ -29,7 +29,7 @@ Role Variables
 
 - `cni_plugins_version` The version of CNI plugins to install (default: `1.5.1`).
 - `cni_plugins_archive_name` The CNI plugins archive name (default: `cni-plugins-linux-amd64-v1.5.1.tgz`).
-- `cni_plugins_download_url` The CNI plugins archive download URL (default: `https://github.com/containernetworking/plugins/releases/download/v1.5.1/cni-plugins-linux-amd64-v1.5.1.tgz`).
+- `cni_plugins_download_url` The CNI plugins archive download URL (default: `https://github.com/containernetworking/plugins/releases/download/v1.5.1`).
 - `cni_plugins_download_path` Local path to download and extract the archive (default: `/tmp`).
 - `cni_plugins_install_path` The CNI plugins installation directory (default: `/opt/cni/bin`).
 - `cni_plugins_config_path` The CNI plugins directory, that contains configuration files (default: `/etc/cni/net.d`).
