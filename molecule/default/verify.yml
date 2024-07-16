@@ -1,0 +1,14 @@
+---
+- name: 'Verify'
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: 'Get list of available CNI plugins'
+      ansible.builtin.find:
+        paths: '/opt/cni/bin'
+      register: cni_plugins_found
+
+    - name: 'The CNI plugins list output'
+      ansible.builtin.debug:
+        msg: "{{ cni_plugins_found['files'] | map(attribute='path') | list }}"
