@@ -3,6 +3,7 @@
   ansible.builtin.get_url:
     url: '{{ cni_plugins_download_url }}/{{ cni_plugins_archive_name }}'
     dest: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
+    checksum: 'sha256:{{ cni_plugins_checksum_url }}'
     mode: 0644
   delegate_to: localhost
 
