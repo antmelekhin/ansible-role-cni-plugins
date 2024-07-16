@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.2](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.0.1...v1.0.2) (2024-07-16)
+
+
+### Fixes
+
+* add `check_mode` ([a585aae](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/a585aae2af4bbbf2c4cbba96173dba1ca5741618))
+* add `cni_plugins_checksum_url` variable ([86a4f01](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/86a4f012e49dcf59e06f65e58eb67b648a23a084))
+
+
+### Tests
+
+* add molecule verify ([c77d3a0](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/c77d3a0fca734af1e0aa7fd2b0157fae496878e6))
+
 ## [1.0.1](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.0.0...v1.0.1) (2024-07-15)
 
 
