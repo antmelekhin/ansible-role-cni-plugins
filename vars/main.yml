@@ -1,0 +1,6 @@
+---
+__cni_plugins_architecture_dict:
+  x86_64: 'amd64'
+  aarch64: 'arm64'
+
+__cni_plugins_architecture: '{{ __cni_plugins_architecture_dict[ansible_architecture] | default(ansible_architecture) }}'
