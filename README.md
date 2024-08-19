@@ -1,7 +1,7 @@
 CNI plugins
 ===========
 
-An Ansible role to install and configure CNI (Container Network Interface) plugins.
+An Ansible role to install and configure CNI (Container Network Interface) [plugins](https://github.com/containernetworking/plugins).
 
 Requirements
 ------------

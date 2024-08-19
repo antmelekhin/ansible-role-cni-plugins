@@ -1,14 +1,28 @@
 ---
-- name: 'Create CNI plugins directories'
-  ansible.builtin.file:
-    path: '{{ cni_plugins_path }}'
-    owner: 'root'
-    group: 'root'
-    state: 'directory'
-    mode: 0755
+- name: 'Prepare for installing CNI plugins'
   become: true
-  loop:
-    - '{{ cni_plugins_install_path }}'
-    - '{{ cni_plugins_config_path }}'
-  loop_control:
-    loop_var: cni_plugins_path
+  block:
+    - name: 'Update the APT package cache'
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+      check_mode: false
+      when: ansible_os_family == 'Debian'
+
+    - name: 'Ensure the dependencies are installed'
+      ansible.builtin.package:
+        name: 'tar'
+        state: 'present'
+
+    - name: 'Create CNI plugins directories'
+      ansible.builtin.file:
+        path: '{{ cni_plugins_path }}'
+        owner: 'root'
+        group: 'root'
+        state: 'directory'
+        mode: 0755
+      loop:
+        - '{{ cni_plugins_install_path }}'
+        - '{{ cni_plugins_config_path }}'
+      loop_control:
+        loop_var: cni_plugins_path
