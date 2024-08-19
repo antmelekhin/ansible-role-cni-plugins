@@ -27,14 +27,9 @@ Requirements
 Role Variables
 --------------
 
-- `cni_plugins_version` The version of CNI plugins to install (default: `1.5.1`).
-- `cni_plugins_archive_name` The CNI plugins archive name (default: `cni-plugins-linux-amd64-v1.5.1.tgz`).
-- `cni_plugins_download_url` The CNI plugins archive download URL (default: `https://github.com/containernetworking/plugins/releases/download/v1.5.1`).
-- `cni_plugins_checksum_url` The CNI plugins checksum file URL (default: `{{ cni_plugins_download_url }}/{{ cni_plugins_archive_name }}.sha256`).
-- `cni_plugins_download_path` Local path to download and extract the archive (default: `/tmp`).
-- `cni_plugins_install_path` The CNI plugins installation directory (default: `/opt/cni/bin`).
-- `cni_plugins_config_path` The CNI plugins directory, that contains configuration files (default: `/etc/cni/net.d`).
-- `cni_plugins_config_files` This variable defines the configuration files for plugins, including options. See the example below and the official [documentation](https://github.com/containernetworking/cni/blob/main/SPEC.md).
+All variables that can be overridden are stored in the [defaults/main.yml](https://github.com/antmelekhin/ansible-role-cni-plugins/blob/main/defaults/main.yml) file.
+Please refer to the [meta/argument_specs.yml](https://github.com/antmelekhin/ansible-role-cni-plugins/blob/main/meta/argument_specs.yml) file for a description of the available variables.
+Similarly, descriptions and defaults for preset variables can be found in the [vars/main.yml](https://github.com/antmelekhin/ansible-role-cni-plugins/blob/main/vars/main.yml) file.
 
 Dependencies
 ------------
