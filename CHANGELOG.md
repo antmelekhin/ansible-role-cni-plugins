@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.1.0...v1.2.0) (2024-08-19)
+
+
+### Features
+
+* add `meta/argument_specs.yml` file ([#2](https://github.com/antmelekhin/ansible-role-cni-plugins/issues/2)) ([145fad2](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/145fad2e31320a6c4b30c4eeae17683a88d9470a))
+
 ## [1.1.0](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.0.2...v1.1.0) (2024-08-19)
 
 
