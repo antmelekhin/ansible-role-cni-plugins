@@ -8,7 +8,8 @@
     mode: 0644
   delegate_to: localhost
 
-- name: 'Unarchive the CNI plugins binaries'
+- name: 'Unarchive the CNI plugins binaries on a target host'
+  become: true
   ansible.builtin.unarchive:
     src: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
     dest: '{{ cni_plugins_install_path }}'
@@ -19,4 +20,3 @@
       - 'LICENSE'
       - 'README.md'
   when: not ansible_check_mode
-  become: true
