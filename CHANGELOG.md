@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.1](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.2.0...v1.2.1) (2024-10-09)
+
+
+### Continuous Integration
+
+* use `ubuntu-22.04` instead of `ubuntu-latest` ([b6d5d28](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/b6d5d28090930694b1380e98e910cfd827a9226d))
+
+
+### Fixes
+
+* add `become: false` to localhost delegated tasks ([e5ea19f](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/e5ea19fac9b0fd7ca1b02127b2a240f257b87bfa))
+
+
+### Styles
+
+* minor fixes ([c4cd19c](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/c4cd19c65444ea7f35cac53b6af423e0fe4b7b90))
+
 ## [1.2.0](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.1.0...v1.2.0) (2024-08-19)
 
 
