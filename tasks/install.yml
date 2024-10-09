@@ -1,5 +1,6 @@
 ---
 - name: 'Download the CNI plugins archive to a local folder'
+  become: false
   ansible.builtin.get_url:
     url: '{{ cni_plugins_download_url }}/{{ cni_plugins_archive_name }}'
     dest: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
