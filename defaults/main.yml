@@ -1,6 +1,6 @@
 ---
 # See available releases: https://github.com/containernetworking/plugins/releases
-cni_plugins_version: '1.5.1'
+cni_plugins_version: '1.6.0'
 cni_plugins_archive_name: 'cni-plugins-linux-{{ __cni_plugins_architecture }}-v{{ cni_plugins_version }}.tgz'
 cni_plugins_download_url: 'https://github.com/containernetworking/plugins/releases/download/v{{ cni_plugins_version }}'
 cni_plugins_checksum_url: '{{ cni_plugins_download_url }}/{{ cni_plugins_archive_name }}.sha256'
