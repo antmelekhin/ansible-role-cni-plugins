@@ -1,4 +1,7 @@
 ---
+- name: 'Install cnitool'
+  shell: GOBIN=/usr/sbin go install github.com/containernetworking/cni/cnitool@latest
+
 - name: 'Download the CNI plugins archive to a local folder'
   become: false
   ansible.builtin.get_url:
