@@ -9,7 +9,7 @@ argument_specs:
       cni_plugins_version:
         type: 'str'
         description: 'The version of CNI plugins to install.'
-        default: '1.6.1'
+        default: '1.6.2'
       cni_plugins_archive_name:
         type: 'str'
         description: 'The CNI plugins archive name.'
