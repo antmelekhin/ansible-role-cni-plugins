@@ -22,7 +22,8 @@
         state: 'directory'
         mode: 0755
       loop:
-        - '{{ cni_plugins_install_path }}'
+        - '{{ cni_plugins_install_path }}/{{ cni_plugins_version }}'
+        - '{{ cni_plugins_binary_path }}'
         - '{{ cni_plugins_config_path }}'
       loop_control:
         loop_var: cni_plugins_path

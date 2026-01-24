@@ -7,6 +7,7 @@
     - name: 'Get list of available CNI plugins'
       ansible.builtin.find:
         paths: '/opt/cni/bin'
+        file_type: 'link'
       register: cni_plugins_found
 
     - name: 'The CNI plugins list output'
