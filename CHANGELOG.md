@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.9](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.2.8...v1.2.9) (2026-03-17)
+
+
+### Fixes
+
+* use newer style ansible facts ([81a363f](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/81a363fb67ac44243c220ebb250996196cbe7ce6))
+
 ## [1.2.8](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.2.7...v1.2.8) (2025-12-25)
 
 
