@@ -28,8 +28,12 @@ argument_specs:
         default: '/tmp'
       cni_plugins_install_path:
         type: 'path'
-        description: 'The CNI plugins installation directory.'
-        default: '/opt/cni/bin'
+        description: ''
+        default: '/opt/cni'
+      cni_plugins_binary_path:
+        type: 'path'
+        description: ''
+        default: '{{ cni_plugins_install_path }}/bin'
       cni_plugins_config_path:
         type: 'path'
         description: 'The CNI plugins directory, that contains configuration files.'
