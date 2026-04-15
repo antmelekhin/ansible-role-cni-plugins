@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.2.10...v1.3.0) (2026-04-15)
+
+
+### Features
+
+* optimize download and install tasks ([#10](https://github.com/antmelekhin/ansible-role-cni-plugins/issues/10)) ([01312ed](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/01312ed252deb1c4b2d01cb008155d98a0717133))
+
 ## [1.2.10](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.2.9...v1.2.10) (2026-03-17)
 
 
