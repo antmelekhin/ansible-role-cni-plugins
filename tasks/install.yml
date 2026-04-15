@@ -1,22 +1,56 @@
 ---
-- name: 'Download the CNI plugins archive to a local folder'
-  become: false
-  ansible.builtin.get_url:
-    url: '{{ cni_plugins_download_url }}/{{ cni_plugins_archive_name }}'
-    dest: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
-    checksum: 'sha256:{{ cni_plugins_checksum_url }}'
-    mode: 0644
-  delegate_to: localhost
-
-- name: 'Unarchive the CNI plugins binaries on a target host'
+- name: 'Create CNI plugins directories'
   become: true
-  ansible.builtin.unarchive:
-    src: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
-    dest: '{{ cni_plugins_install_path }}'
+  ansible.builtin.file:
+    path: '{{ cni_plugins_path }}'
     owner: 'root'
     group: 'root'
+    state: 'directory'
     mode: 0755
-    exclude:
-      - 'LICENSE'
-      - 'README.md'
-  when: not ansible_check_mode
+  loop:
+    - '{{ cni_plugins_install_path }}/{{ cni_plugins_version }}'
+    - '{{ cni_plugins_config_path }}'
+  loop_control:
+    loop_var: cni_plugins_path
+
+- name: 'Download and unarchive CNI plugins'
+  when:
+    - not ansible_check_mode
+    - not __cni_plugins_is_installed.stat.exists
+  block:
+    - name: 'Download the CNI plugins archive to a local folder'
+      become: false
+      ansible.builtin.get_url:
+        url: '{{ cni_plugins_download_url }}/{{ cni_plugins_archive_name }}'
+        dest: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
+        checksum: 'sha256:{{ cni_plugins_checksum_url }}'
+        mode: 0644
+      delegate_to: localhost
+
+    - name: 'Unarchive the CNI plugins binaries on a target host'
+      become: true
+      ansible.builtin.unarchive:
+        src: '{{ cni_plugins_download_path }}/{{ cni_plugins_archive_name }}'
+        dest: '{{ cni_plugins_install_path }}/{{ cni_plugins_version }}'
+        owner: 'root'
+        group: 'root'
+        mode: 0755
+        exclude:
+          - 'LICENSE'
+          - 'README.md'
+
+- name: 'Get the CNI plugins binaries list'
+  ansible.builtin.find:
+    paths: '{{ cni_plugins_install_path }}/{{ cni_plugins_version }}'
+    file_type: 'file'
+  register: __cni_plugins_found
+
+- name: 'Create the symbolic link to CNI plugins binary path'
+  become: true
+  ansible.builtin.file:
+    src: '{{ cni_plugin_name }}'
+    dest: '{{ cni_plugins_install_path }}/{{ cni_plugin_name | basename }}'
+    state: 'link'
+  loop: "{{ __cni_plugins_found['files'] | map(attribute='path') }}"
+  loop_control:
+    loop_var: cni_plugin_name
