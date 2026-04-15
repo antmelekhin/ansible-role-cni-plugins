@@ -8,8 +8,8 @@
       ansible.builtin.find:
         paths: '/opt/cni/bin'
         file_type: 'link'
-      register: cni_plugins_found
+      register: __cni_plugins_found
 
     - name: 'The CNI plugins list output'
       ansible.builtin.debug:
-        msg: "{{ cni_plugins_found['files'] | map(attribute='path') | list }}"
+        msg: "{{ __cni_plugins_found['files'] | map(attribute='path') | list }}"
