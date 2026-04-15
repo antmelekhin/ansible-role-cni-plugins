@@ -43,7 +43,7 @@
   ansible.builtin.find:
     paths: '{{ cni_plugins_install_path }}/{{ cni_plugins_version }}'
     file_type: 'file'
-  register: __cni_plugins_found_result
+  register: __cni_plugins_found
 
 - name: 'Create the symbolic link to CNI plugins binary path'
   become: true
@@ -51,6 +51,6 @@
     src: '{{ cni_plugin_name }}'
     dest: '{{ cni_plugins_install_path }}/{{ cni_plugin_name | basename }}'
     state: 'link'
-  loop: "{{ __cni_plugins_found_result['files'] | map(attribute='path') }}"
+  loop: "{{ __cni_plugins_found['files'] | map(attribute='path') }}"
   loop_control:
     loop_var: cni_plugin_name
