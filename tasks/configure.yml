@@ -6,7 +6,7 @@
     dest: '{{ cni_plugins_config_path }}/{{ cni_plugins_config.filename }}'
     owner: 'root'
     group: 'root'
-    mode: 0644
+    mode: '0644'
   loop: '{{ cni_plugins_config_files }}'
   loop_control:
     loop_var: cni_plugins_config
