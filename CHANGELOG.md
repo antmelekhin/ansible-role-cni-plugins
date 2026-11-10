@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.3.0...v1.3.1) (2026-11-10)
+
+
+### Fixes
+
+* **version:** CNI plugins updated to `1.10.0` release ([#12](https://github.com/antmelekhin/ansible-role-cni-plugins/issues/12)) ([7e7208b](https://github.com/antmelekhin/ansible-role-cni-plugins/commit/7e7208b437dddba54f9074f676f38cf68169ce0e))
+
 ## [1.3.0](https://github.com/antmelekhin/ansible-role-cni-plugins/compare/v1.2.10...v1.3.0) (2026-04-15)
 
 
